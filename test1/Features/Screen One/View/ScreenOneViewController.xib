@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScreenOneViewController" customModule="test1" customModuleProvider="target">
+            <connections>
+                <outlet property="helloWorldLabel" destination="sOS-kG-etm" id="3xG-Vo-epX"/>
+                <outlet property="infoTextField" destination="ucF-U1-gj8" id="ltt-Gd-Ggo"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="JpS-4y-wAO">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOS-kG-etm">
+                    <rect key="frame" x="132.5" y="430" width="149.5" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ucF-U1-gj8">
+                    <rect key="frame" x="10" y="496" width="394" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="onTextChangeAction:" destination="-1" eventType="editingChanged" id="A34-gZ-YfJ"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uI8-c8-fnC">
+                    <rect key="frame" x="162" y="796" width="90" height="36"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="tintColor" name="AccentColor"/>
+                    <state key="normal" title="Next page">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="piD-WZ-csH"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemTealColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ucF-U1-gj8" secondAttribute="trailing" constant="10" id="ANn-ac-xbc"/>
+                <constraint firstItem="ucF-U1-gj8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="KDi-NW-fHw"/>
+                <constraint firstAttribute="bottom" secondItem="JpS-4y-wAO" secondAttribute="bottom" id="LPC-hM-aam"/>
+                <constraint firstItem="sOS-kG-etm" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Lm6-bK-NJA"/>
+                <constraint firstItem="JpS-4y-wAO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="T8d-sZ-vcl"/>
+                <constraint firstItem="JpS-4y-wAO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZO7-TT-cYi"/>
+                <constraint firstItem="sOS-kG-etm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ZeB-0w-LHQ"/>
+                <constraint firstItem="ucF-U1-gj8" firstAttribute="top" secondItem="sOS-kG-etm" secondAttribute="bottom" constant="30" id="azh-6M-0jA"/>
+                <constraint firstItem="uI8-c8-fnC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="djf-Is-oDE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JpS-4y-wAO" secondAttribute="trailing" id="hn1-Hn-Mcg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="uI8-c8-fnC" secondAttribute="bottom" constant="30" id="u0P-bK-UOh"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="109"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="background" width="640" height="640"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -14,22 +14,26 @@ struct Router {
     
     enum Photos: URLRequestConvertible {
         case getPhotos
+        case getPhotoById(photoId: Int)
         
         var resource: String {
             switch self {
             case .getPhotos: return "/photos"
+            case .getPhotoById: return "/photos/%d"
             }
         }
         
         var method: HTTPMethod {
             switch self {
             case .getPhotos: return .get
+            case .getPhotoById: return .get
             }
         }
         
         var path: String {
             switch self {
             case .getPhotos: return resource
+            case let .getPhotoById(photoId): return String(format: resource, photoId)
             }
         }
         
@@ -39,6 +43,8 @@ struct Router {
             
             switch self {
             case .getPhotos:
+                break
+            case .getPhotoById:
                 break
             }
             

@@ -28,4 +28,22 @@ class AlamofireDataSource: RemoteDataSource {
             }
         }
     }
+    
+    
+    func getPictureById(id: Int, result: @escaping ((Result<Picture, Error>) -> Void)) {
+        AF.request(Router.Photos.getPhotoById(photoId: id), interceptor: nil).response { serverResponse in
+            switch serverResponse.result {
+            case.success(_):
+                do {
+                    let jsonDecoder = JSONDecoder()
+                    let responseBody: Picture = try jsonDecoder.decode(Picture.self, from: serverResponse.data!) as Picture
+                    result(.success(responseBody))
+                } catch let error {
+                    result(.failure(error))
+                }
+            case.failure(let error):
+                result(.failure(error))
+            }
+        }
+    }
 }

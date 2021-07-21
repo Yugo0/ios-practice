@@ -19,4 +19,8 @@ class RepositoryImplementation: Repository {
     func getPictures(result: @escaping ((Result<Array<Picture>, Error>) -> Void)) {
         webRemoteDataSource.getPictures(result: result)
     }
+    
+    func getPictureById(id: Int, result: @escaping ((Result<Picture, Error>) -> Void)) {
+        webRemoteDataSource.getPictureById(id: id, result: result)
+    }
 }

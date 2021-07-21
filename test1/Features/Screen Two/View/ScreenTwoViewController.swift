@@ -20,6 +20,7 @@ class ScreenTwoViewController: UIViewController {
     @IBAction func onButtonTapped(_ sender: UIButton) {
         navigationController!.show(PhotoScreenViewController(), sender: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

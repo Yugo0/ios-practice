@@ -16,4 +16,6 @@ class RemoteDataSouceImplementation: RemoteDataSource {
         
         result(.success(arr))
     }
+    
+    func getPictureById(id: Int, result: @escaping ((Result<Picture, Error>) -> Void)) {}
 }

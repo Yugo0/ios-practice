@@ -27,6 +27,7 @@ class PhotoScreenViewController: UIViewController {
         nameObserver = [viewModel.observe(\.pictures, options: .new) { _, pictures  in
             if let pictures = pictures.newValue {
                 self.photoTableView.dataSource = self
+                self.photoTableView.delegate = self
             }
         }]
     }
@@ -45,5 +46,11 @@ extension PhotoScreenViewController: UITableViewDataSource {
         }
         
         return cell
+    }
+}
+
+extension PhotoScreenViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController!.show(PhotoDetailsScreenViewController(pictureId: viewModel.pictures![indexPath.row].id), sender: nil)
     }
 }
